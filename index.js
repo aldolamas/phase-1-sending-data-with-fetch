@@ -3,7 +3,7 @@ const mainUrl = "http://localhost:3000/users"
 const body = document.querySelector('body');
 
 function submitData(firstName, email) {
-    const configObj = {
+    const configurationObject = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -14,7 +14,7 @@ function submitData(firstName, email) {
             "email": email
         })
     };
-    return fetch("http://localhost:3000/users", configObj)
+    return fetch("http://localhost:3000/users", configurationObject)
     .then(res => res.json())
     .then(body => addNewContact(body.id))
     .catch(response => document.body.append('Unauthorized Access'))
@@ -22,4 +22,4 @@ function submitData(firstName, email) {
 function addNewContact(newID) {
         document.getElementsByTagName('body')[0].innerHTML = newID;
 }
-submitData("Name", "name@name.com");
+submitData("Aldo", "aldo@aldo.com");
